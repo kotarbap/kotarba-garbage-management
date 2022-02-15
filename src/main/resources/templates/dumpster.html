@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Odbior odpadow by Piotr Kotarba</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="dumpster.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <div class="truck-position">
+        <h1>Twoj śmietnik:</h1>
+        <div class="color">Kolor worka</div>
+        <div class="type">Typ odpadow</div>
+        <div class="quantity">Ilosc</div>
+        <div class="piece-price">Cena jednostkowa</div>
+        <div class="price">Cena</div>
+    </div>
+    <div th:each="position : ${dumpster.truckPositions}" class="truck-position">
+        <div th:text="${position.bag.color}" class="color"></div>
+        <div th:text="${position.bag.type}" class="type"></div>
+        <div th:text="${position.quantity}" class="quantity"></div>
+        <div th:text="${position.bag.price + 'zł'}" class="piece-price"></div>
+        <div th:text="${position.bag.price * position.quantity + 'zł'}" class="price"></div>
+    </div>
+    <div class="truck-position">
+        <div class="color"></div>
+        <div class="type"></div>
+        <div class="quantity"></div>
+        <div class="piece-price">Suma</div>
+        <div th:text="${sum + 'zł'}" class="price"></div>
+    </div>
+    <a href="/truck">Zleć odbiór śmieciarce</a>
+</div>
+</body>
+</html>

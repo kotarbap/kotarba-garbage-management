@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Odbior odpadow by Piotr Kotarba</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="truck.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <div class="truck">
+        <div class="date">Data</div>
+        <div class="status">Status</div>
+        <div class="price">Wartość</div>
+    </div>
+    <div th:each="truck : ${trucks}" class="truck">
+        <div th:text="${truck.date}" class="date"></div>
+        <div th:text="${truck.status}" class="status"></div>
+        <div th:text="${truck.price}" class="price"></div>
+        <div th:each="truckPosition : ${truck.truckPositions}" class="truck-position">
+            <div th:text="${truckPosition.bag.color}" class="color"></div>
+            <div th:text="${truckPosition.bag.type}" class="type"></div>
+            <div th:text="${truckPosition.quantity}" class="quantity"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

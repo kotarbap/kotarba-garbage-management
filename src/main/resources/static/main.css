@@ -1,0 +1,29 @@
+.bag {
+    border: 1px solid black;
+    margin: 10px;
+    width: 700px;
+    padding: 10px;
+}
+
+.bag .color {
+    font-size: 22px;
+}
+
+.bag .type {
+    font-size: 18px;
+}
+
+.bag .price {
+    font-size: 15px;
+    display: inline-block;
+}
+
+.bag .quantity {
+    font-size: 15px;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.bag div {
+    margin: 10px;
+}

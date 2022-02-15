@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Odbior odpadow by Piotr Kotarba</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    Zaloguj sie aby kontynuować <br/>
+    <h4>
+        Istnieją już konta: <br />
+    </h4>
+    login: admin&emsp;pass: admin <br />
+    login: piotr&emsp;pass: piotr <br /><br />
+    Nie zalozyles swojego konta? <br/>
+    Zarejestruj sie ponizej! <br/>
+
+    <form method="post" id="login-form">
+        <input type="text" placeholder="Login" name="login">
+        <br>
+        <input type="password" placeholder="Haslo" name="password">
+        <br>
+        <input type="submit" value="Zaloguj">
+    </form>
+    <a href="/register">Zarejestruj</a>
+</div>
+</body>
+</html>

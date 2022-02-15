@@ -1,0 +1,49 @@
+.truck {
+    width: 75%;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.truck:hover > .truck-position {
+    display: block;
+}
+
+.truck .date {
+    width: 30%;
+    display: inline-block;
+}
+
+.truck .status {
+    width: 15%;
+    display: inline-block;
+}
+
+.truck .price {
+    width: 15%;
+    display: inline-block;
+}
+
+.truck .truck-position {
+    display: none;
+}
+
+.truck-position {
+    width: 75%;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.truck-position .color {
+    width: 50%;
+    display: inline-block;
+}
+
+.truck-position .type {
+    width: 30%;
+    display: inline-block;
+}
+
+.truck-position .quantity {
+    width: 17%;
+    display: inline-block;
+}
